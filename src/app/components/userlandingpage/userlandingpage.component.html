@@ -1,0 +1,32 @@
+<header>
+    <div class="navbar navbar-inverse bg-dark shadow-sm">
+        <div class="navbar-brand align-item-center d-flex">
+            <i style="font-size:35px ; color: white; margin-left: 5%;" class="fa fa-glide-g">
+                <strong>Cabs</strong>
+             
+            </i>
+        </div>
+
+        <button class="btn" style="margin-left:10%;" (click)="toridepage()">
+            <i style="color: white ; font-size:35px" class="fa fa-taxi"></i>
+        </button>
+        <button class="btn" style="margin-left: 22%;" (click)="toprofilepage()">
+            <i style="color: white ; font-size:35px ; " class="fa fa-user"> </i>
+        </button>
+
+    </div>
+</header>
+
+<div class="row" style="justify-content: center;align-items: center;padding: 100px;">
+    <div class="card" style="width: 18rem;margin: 8px;" *ngFor="let cab of cabList">
+        <img class="card-img-top" src="{{cab.Image}}" alt="Card image cap" style="width: 260px;height: 200px;margin: 4px;">
+        <div class="card-body">
+          <h5 class="card-title">{{cab.DriverName}}</h5>
+          <h6 class="card-text">Contact : {{cab.DriverContact}}</h6>
+          <h6 class="card-text">Price : {{cab.Price}}</h6>
+          <p class="card-text">Route : {{cab.Route}}</p>
+          <button class="btn btn-primary" (click)="bookride(cab)">Book Ride</button>
+        </div>
+    </div>
+
+</div>

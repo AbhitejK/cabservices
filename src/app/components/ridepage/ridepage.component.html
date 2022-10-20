@@ -1,0 +1,38 @@
+<header>
+  <div class="navbar navbar-inverse bg-dark shadow-sm">
+      <div class="navbar-brand align-item-center d-flex">
+          <i style="font-size:35px ; color: white; margin-left: 5%;" class="fa fa-glide-g">
+              <strong>Cabs</strong>
+
+          </i>
+      </div>
+
+      <button class="btn" style="margin-left:10%;" (click)="toridepage()">
+          <i style="color: white ; font-size:35px" class="fa fa-taxi"></i>
+      </button>
+      <button class="btn" style="margin-left: 22%;" (click)="toprofilepage()">
+          <i style="color: white ; font-size:35px ; " class="fa fa-user"> </i>
+      </button>
+
+  </div>
+</header>
+<div class="card"  style="margin-left: 380px;width: 40%;margin-top: 120px" *ngIf="ride.length>0">
+    <div class="card-horizontal">
+        <div class="img-square-wrapper">
+            <img class="" src="{{ride[0].Image}}" alt="Card image cap" style="width: 260px;height: 200px;margin: 4px;">
+        </div>
+        <div class="card-body" style="margin-left: 80px">
+            <h5 class="card-title">{{ride[0].DriverName}}</h5>
+            <h6 class="card-text">Contact : {{ride[0].DriverContact}}</h6>
+            <h6 class="card-text">Price : {{ride[0].Price}}</h6>
+            <p class="card-text">Route : {{ride[0].Route}}</p>
+        </div>
+    </div>
+    <button class="btn btn-primary" (click)="deleteride()" style="margin: 8px;">DELETE</button>
+    <button routerLink="/userlandingpage" class="btn btn-primary" style="margin: 8px">BACK</button>
+</div>
+
+<div class='card'*ngIf="ride.length===0" style="margin: 12px;margin-left: 380px;width: 50%;margin-top: 70px;" >
+    <h3 class='card-title'align="center">NO RIDES BOOKED</h3>
+    <button routerLink="/userlandingpage" class="btn btn-primary">BACK</button>
+</div>
